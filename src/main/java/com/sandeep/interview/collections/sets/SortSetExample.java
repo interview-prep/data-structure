@@ -27,5 +27,18 @@ public class SortSetExample {
         Set<House> treeSetSort = new TreeSet<House>(new SortSetComparator(0));
         treeSetSort.addAll(houses);
         System.out.println(treeSetSort);
+
+        Set<DuplicateHouse> duplicateHouses = new HashSet<DuplicateHouse>();
+        duplicateHouses.add(new DuplicateHouse("New York City", "2007-11-11"));
+        duplicateHouses.add(new DuplicateHouse("Los Angeles", "2005-06-11"));
+        duplicateHouses.add(new DuplicateHouse("Chicago", "2012-05-03"));
+        duplicateHouses.add(new DuplicateHouse("Portland", "2007-10-11"));
+
+        // sorting has done based on city name. Set sorting requires you to implement Comparable or comparator
+        TreeSet<DuplicateHouse> duplicateHousesSorting = new TreeSet<DuplicateHouse>(duplicateHouses);
+        /*DuplicateHouse duplicateHouse = duplicateHousesSorting.pollFirst();
+        System.out.println(duplicateHouse);*/
+        System.out.println(duplicateHousesSorting);
+//
     }
 }

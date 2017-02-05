@@ -27,6 +27,8 @@ public class SetExample {
         Iterator<String> iterator = hashSetOfString.iterator();
         while (iterator.hasNext()) {
 //            iterator.remove();
+            //Exception in thread "main" java.util.ConcurrentModificationException: You cannot add element to set once start iterator
+//            hashSetOfString.add("try adding new element here");
             System.out.println(iterator.next());
         }
         System.out.println("-----------------treeset sorder by natural sort----------------");
@@ -34,6 +36,11 @@ public class SetExample {
         while (iterator.hasNext()) {
 //            iterator.remove();
             System.out.println(iterator.next());
+        }
+        for (String ss : hashSetOfString) {
+//            java.util.ConcurrentModificationException
+//            hashSetOfString.add("add element here");
+            System.out.println(ss);
         }
 
     }
