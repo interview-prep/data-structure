@@ -26,13 +26,13 @@ public class MapExample {
 
         System.out.println("-----------------hashMap-----------------------");
         for (Map.Entry<String, String> entry : map1.entrySet()) {
-            System.out.println("Key : " + entry.getKey()
-                    + " Value : " + entry.getValue());
+            System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
+            //Below line causes : Exception in thread "main" java.util.ConcurrentModificationException
+            //map1.put("ten","Number 10");
         }
         System.out.println("------------------TreeMap-natural sorting by key---------------------");
         for (Map.Entry<String, String> entry : map2.entrySet()) {
-            System.out.println("Key : " + entry.getKey()
-                    + " Value : " + entry.getValue());
+            System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());
         }
     }
 
