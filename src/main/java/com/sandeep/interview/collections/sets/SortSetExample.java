@@ -23,8 +23,9 @@ public class SortSetExample {
         Collections.sort(houseListCopy, new SortSetComparator(0));
 
         System.out.println(houseListCopy);
-
-/*        Set<House> treeSetSort = new TreeSet<House>(houses);
-        System.out.println(treeSetSort);*/
+// if your sorting element is repeated then treeset remove duplicates.
+        Set<House> treeSetSort = new TreeSet<House>(new SortSetComparator(0));
+        treeSetSort.addAll(houses);
+        System.out.println(treeSetSort);
     }
 }
