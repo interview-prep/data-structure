@@ -20,7 +20,7 @@ public class SortPersonComparator implements Comparator<Student> {
                 sortResult = o1.getName().compareToIgnoreCase(o2.getName());
                 break;
             case 1:
-                sortResult = o2.getName().compareToIgnoreCase(o1.getName());;
+                sortResult = o2.getName().compareToIgnoreCase(o1.getName());
                 break;
             case 2:
                 sortResult = o1.getGrade() - o2.getGrade();

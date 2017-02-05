@@ -14,11 +14,6 @@ public class Student {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return name + " " + grade;
-    }
-
     public int getGrade() {
         return grade;
     }
@@ -34,5 +29,28 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    @Override
+    public String toString() {
+        return name + " " + grade;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student student = (Student) o;
+
+        if (grade != student.grade) return false;
+        return name.equals(student.name);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = grade;
+        result = 31 * result + name.hashCode();
+        return result;
+    }
 }
