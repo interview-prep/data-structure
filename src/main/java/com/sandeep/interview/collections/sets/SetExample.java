@@ -1,4 +1,4 @@
-package com.sandeep.interview.collections;
+package com.sandeep.interview.collections.sets;
 
 import java.util.*;
 

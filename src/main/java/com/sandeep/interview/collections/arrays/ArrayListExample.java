@@ -18,7 +18,7 @@ public class ArrayListExample {
         this.strings.add("four");
     }
 
-    public void getSetData() {
+    public void getSimpleStringData() {
         Collections.sort(strings);//order by natural
         Iterator<String> iterator = strings.iterator();
         while (iterator.hasNext()) {
@@ -33,6 +33,6 @@ public class ArrayListExample {
 
     public static void main(String[] args) {
         ArrayListExample example = new ArrayListExample();
-        example.getSetData();
+        example.getSimpleStringData();
     }
 }

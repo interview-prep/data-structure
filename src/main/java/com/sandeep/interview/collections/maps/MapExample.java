@@ -1,4 +1,4 @@
-package com.sandeep.interview.collections;
+package com.sandeep.interview.collections.maps;
 
 import java.util.*;
 
@@ -34,10 +34,6 @@ public class MapExample {
             System.out.println("Key : " + entry.getKey()
                     + " Value : " + entry.getValue());
         }
-    }
-
-    public void getMapData() {
-
     }
 
     public static void main(String[] args) {
