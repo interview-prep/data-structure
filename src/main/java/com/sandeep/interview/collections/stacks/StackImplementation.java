@@ -1,15 +1,15 @@
-package stacks;
+package com.sandeep.interview.collections.stacks;
 
 /**
  * Created by VRAMA1 on 1/2/2017.
  */
-public class TheStack {
+public class StackImplementation {
 
     private String[] stackArray;
     private int stackSize;
     private int topOfTheStack = -1;
 
-    TheStack(int size){
+    StackImplementation(int size){
         stackSize =size;
         stackArray = new String[size];
     }
@@ -42,15 +42,15 @@ public class TheStack {
     }
 
     public static void main(String[] args) {
-        TheStack theStack = new TheStack(10);
-        theStack.push("10");
-        theStack.push("20");
-        theStack.push("30");
-        theStack.peek();
-        theStack.pop();
-        theStack.pop();
+        StackImplementation stackImplementation = new StackImplementation(10);
+        stackImplementation.push("10");
+        stackImplementation.push("20");
+        stackImplementation.push("30");
+        stackImplementation.peek();
+        stackImplementation.pop();
+        stackImplementation.pop();
 
-        theStack.peek();
+        stackImplementation.peek();
 
     }
 
