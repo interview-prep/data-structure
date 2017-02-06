@@ -55,12 +55,13 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-                "code=" + code +
-                ", name='" + name + '\'' +
-                ", auth='" + auth + '\'' +
-                ", pubDate=" + pubDate +
-                '}';
+        StringBuilder sb = new StringBuilder()
+                .append("Book{")
+                .append("code=" + code)
+                .append(", name='" + name + "'")
+                .append(", auth='" + auth + "'")
+                .append(", pubDate=" + pubDate + "}");
+        return sb.toString();
     }
 
     @Override
