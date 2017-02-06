@@ -24,6 +24,8 @@ public class MapExample {
 
     public <K, V> void printMap() {
 
+        System.out.println(map1.get("one"));
+
         System.out.println("-----------------hashMap-----------------------");
         for (Map.Entry<String, String> entry : map1.entrySet()) {
             System.out.println("Key : " + entry.getKey() + " Value : " + entry.getValue());

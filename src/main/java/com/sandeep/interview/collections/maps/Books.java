@@ -26,13 +26,27 @@ public class Books {
     }
 
     public void getBooks() {
+
+//        System.out.println(bookMap.get(new Book(127, "Book5", "Sandeep M", new Date()))); // prints the value mapped to key passed
+//        System.out.println(bookMap.get(new Book(127, "", "", new Date()))); //prints null
+        System.out.println("---------------------------------------");
         Set<Map.Entry<Book, Book>> entries = bookMap.entrySet();
+        System.out.println(entries.size());
+        Iterator<Map.Entry<Book, Book>> iterator = entries.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Book, Book> next = iterator.next();
+            System.out.println(next.getKey() + "-" + next.getValue());
+        }
+
+        System.out.println("__--sorted hashmap-----------__");
         List<Map.Entry<Book, Book>> entries1 = new ArrayList<Map.Entry<Book, Book>>();
         entries1.addAll(entries);
         Collections.sort(entries1, new SortMapComparator(SortOrder.NAME.ordinal()));
         for (Map.Entry e : entries1) {
             System.out.println(e.getKey() + ":" + e.getValue());
         }
+
+
     }
 
     public static void main(String[] args) {
