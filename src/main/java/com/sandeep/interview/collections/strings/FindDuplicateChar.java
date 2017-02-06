@@ -17,16 +17,30 @@ public class FindDuplicateChar {
 
     public void printDuplicatesInCStyle() {
         char[] chars = name.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-
+        int count;
+        String res = "";
+        String a = name;
+        while (a.length() > 0) {
+            int c = 0;
+            for (int j = 0; j < a.length(); j++) {
+                if (a.charAt(0) == a.charAt(j))
+                    c = c + 1;
+            }
+            res = res + a.charAt(0) + "=" + c + "\n";
+            String k[] = a.split(a.charAt(0) + "");
+            a = new String("");
+            for (int i = 0; i < k.length; i++) {
+                a = a + k[i];
+            }
         }
+        System.out.println(res);
+
     }
 
     public void printDuplicates() {
         Map<Character, Integer> map = new HashMap<Character, Integer>();
         char[] chars = name.toCharArray();
         for (Character c : chars) {
-            System.out.println(c);
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) + 1);
             } else {
@@ -51,5 +65,6 @@ public class FindDuplicateChar {
     public static void main(String[] args) {
         FindDuplicateChar aChar = new FindDuplicateChar("Sandeep");
         aChar.printDuplicates();
+        aChar.printDuplicatesInCStyle();
     }
 }
