@@ -11,7 +11,7 @@ public class DoubleCheckedLockingSingleton {
 
     public static DoubleCheckedLockingSingleton getInstance() {
         if (INSTANCE == null) {
-            synchronized (DoubleCheckedLockingSingleton.class) {
+            synchronized (DoubleCheckedLockingSingleton.class) { // this will lock the dcls class for creating object by one thread
                 //double checking Singleton instance
                 if (INSTANCE == null) {
                     INSTANCE = new DoubleCheckedLockingSingleton();
