@@ -9,13 +9,14 @@ public class Books {
 
     Map<Book, Book> bookMap = new HashMap<Book, Book>();
 
-    Books() {
+    Books() throws InterruptedException {
 
         Book book1 = new Book(123, "Book1", "Sandeep M", new Date());
         Book book2 = new Book(124, "Book2", "Sanmay M", new Date());
         Book book3 = new Book(125, "Book3", "Sanmay M", new Date());
-        Book book4 = new Book(126, "Book4", "Sandeep M", new Date());
-        Book book5 = new Book(127, "Book5", "Sandeep M", new Date());
+        Book book4 = new Book(126, "Book4", " M Sandeep", new Date());
+//        new Thread().sleep(1000);
+        Book book5 = new Book(126, "Book4", "Sandeep M", new Date());
 
         bookMap.put(book1, book1);
         bookMap.put(book2, book2);
@@ -44,13 +45,13 @@ public class Books {
         entries1.addAll(entries);
         Collections.sort(entries1, new SortMapComparator(SortOrder.NAME.ordinal()));
         for (Map.Entry e : entries1) {
-            System.out.println(e.getKey() + ":" + e.getValue());
+            System.out.println(e.getKey().hashCode() + ":" + e.getValue());
         }
 
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Books books = new Books();
         books.getBooks();
     }
