@@ -5,10 +5,13 @@ package com.sandeep.interview.collections.container;
  */
 public class EagerInitializedSingleton {
 
+    byte x;
+    long y;
     private static final EagerInitializedSingleton instance = new EagerInitializedSingleton();
 
     //private constructor to avoid client applications to use constructor
     private EagerInitializedSingleton() {
+        y= x;
     }
 
     public static EagerInitializedSingleton getInstance() {
