@@ -13,6 +13,8 @@ public class DuplicatesWordsInSentence {
         Set<String> duplicates = duplicateWords(test);
         System.out.println("input : " + test);
         System.out.println("output : " + duplicates);
+        System.out.println(0.1 * 3);
+        System.out.println( (Integer) 222);
     }
 
     /**
