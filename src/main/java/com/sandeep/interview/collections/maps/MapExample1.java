@@ -36,5 +36,9 @@ public class MapExample1 {
 
         System.out.println(employeeObjectMap.size());
         System.out.println(employeeObjectMap.get(employee3));
+
+        HashMap<String, Integer> map = new HashMap<String, Integer>();
+        map.put(null, 1000);
+        System.out.println(map.get(null)); //Prints 1000
     }
 }
