@@ -19,6 +19,11 @@ public class ArrayListExample {
     }
 
     public void getSimpleStringData() {
+//        this.strings.remove(new String("one"));// removing object using object is safer else throw java.lang.IndexOutOfBoundsException:
+        this.strings.remove(1);// --1
+        this.strings.remove(3); // --1
+//        this.strings.remove(5); java.lang.IndexOutOfBoundsException: Index: 5, Size: 4
+        this.strings.remove(new String("five"));
         Collections.sort(strings);//order by natural
         Iterator<String> iterator = strings.iterator();
         while (iterator.hasNext()) {
@@ -28,6 +33,7 @@ public class ArrayListExample {
         System.out.println("----------------------");
         for (String s : strings) {
             System.out.println(s);
+//            this.strings.remove(s);//Exception in thread "main" java.util.ConcurrentModificationException
         }
     }
 

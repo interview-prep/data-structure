@@ -5,8 +5,11 @@ package com.sandeep.interview.collections.oops;
  */
 public class StaticOverload extends ParentWithStatic {
 
+    private static int x = 10;
+    private int y = x;
     public static void methodOne() {
-        System.out.println("methodOne");
+        System.out.println("methodOne" + x);
+//        System.out.println("methodOne" + y); y is not static
     }
 
     public void nonStaticMethodOne() {
