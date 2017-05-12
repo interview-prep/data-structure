@@ -1,5 +1,7 @@
 package com.sandeep.interview.collections.clone;
 
+import org.junit.Test;
+
 /**
  * Created by Sandeep on 2/7/2017.
  */
