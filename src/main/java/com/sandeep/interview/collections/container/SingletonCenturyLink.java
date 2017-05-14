@@ -3,6 +3,23 @@ package com.sandeep.interview.collections.container;
 /**
  * Created by Sandeep on 2/13/2017.
  */
+/*
+Can we break singleton?
+
+Answer-Yes,one can create multiple objects using
+Serialization/deserialization if singleton
+class is marked as serializable.So we should not mark singleton
+class as serializable and in case
+class is serializable via inheritance,override readObject()method and throw Non serializable exception.
+        Cloning-if singleton
+class is marked as cloneable.So we should not mark singleton
+class as Cloneable and if
+class is cloneable (by parent class),override clone method and throw CloneNotSupported exception.
+        Using reflection as reflection can access private fields.So we can apply check in constructor and throw exception if instance is not created from constructor.
+
+link :http://www.wideskills.com/java-interview-questions/java-singleton-interviw-questions
+*/
+
 public class SingletonCenturyLink {
     private static final String sr = "asdsa";
     private String sr1 = sr;
