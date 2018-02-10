@@ -34,6 +34,7 @@ public class ArrayListExample {
         for (String s : strings) {
             System.out.println(s);
             this.strings.remove(new String(s));//Exception in thread "main" java.util.ConcurrentModificationException
+//            this.strings.add("dfds");
         }
     }
 

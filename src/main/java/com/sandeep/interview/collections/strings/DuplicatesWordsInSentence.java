@@ -9,6 +9,12 @@ import java.util.Set;
  */
 public class DuplicatesWordsInSentence {
     public static void main(String[] args) {
+
+//        HashSet allows null values however if you insert more than one nulls it would still return only one null value.
+
+        Set ss = new HashSet();
+        ss.add(null);
+        ss.add(null);
         String test = "This sentence contains two words, one and two";
         Set<String> duplicates = duplicateWords(test);
         System.out.println("input : " + test);
