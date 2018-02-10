@@ -1,18 +1,46 @@
 package com.sandeep.interview.collections.simple;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Sandeep on 2/10/2018.
  */
 class ParentC {
-    protected void methodOverRideRestriction(){
+
+    private List<String> l = new ArrayList();
+
+    protected void methodOverRideRestriction(int x) {
         System.out.println("ParentC :: methodOverRideRestriction");
+        l.add("dfds");
+        l.stream().forEach(r -> {
+            System.out.println(r);
+        });
+    }
+
+    private void meth() {
+
     }
 }
 
 public class ChildC extends ParentC {
     //method access previllage cannot be lower then protected like private but it can be public
-    public void methodOverRideRestriction(){
+
+    public void methodOverRideRestriction() {
         System.out.println("ChildC :: methodOverRideRestriction");
+        try {
+//            System.exit(1); // jvm exits so finally will not be called
+        } finally {
+            System.out.println("finally");
+        }
+    }
+
+    static {
+        System.out.println("imstatic"); // runs always
+    }
+
+    public void meth() {// no error because not known to parents.
+
     }
 
     public static void main(String[] args) {
@@ -26,8 +54,9 @@ public class ChildC extends ParentC {
         ParentC pc = new ChildC();
         System.out.println(pc instanceof ParentC); // true
         System.out.println(pc instanceof ChildC); // true
-        pc.methodOverRideRestriction();//invokes child because pc is child here
+        pc.methodOverRideRestriction(9);//invokes child because pc is child here
 
+        ChildC ddd = (ChildC) pc; // downcasting ; pc is ParentC
         ParentC p = new ParentC();
         System.out.println(p instanceof ParentC); // true
         System.out.println(p instanceof ChildC); // false
