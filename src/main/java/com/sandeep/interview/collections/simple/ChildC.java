@@ -10,6 +10,7 @@ class ParentC {
 
     private List<String> l = new ArrayList();
 
+    protected void methodOverRideRestriction() {}
     protected void methodOverRideRestriction(int x) {
         System.out.println("ParentC :: methodOverRideRestriction");
         l.add("dfds");
@@ -54,7 +55,9 @@ public class ChildC extends ParentC {
         ParentC pc = new ChildC();
         System.out.println(pc instanceof ParentC); // true
         System.out.println(pc instanceof ChildC); // true
-        pc.methodOverRideRestriction(9);//invokes child because pc is child here
+        pc.methodOverRideRestriction(9);//invokes ParentC because pc is ParentC here
+        pc.methodOverRideRestriction();//invokes child because pc is ParentC reference but runtime it will resolve to ChildC
+//        (ChildC)pc.methodOverRideRestriction();
 
         ChildC ddd = (ChildC) pc; // downcasting ; pc is ParentC
         ParentC p = new ParentC();
