@@ -31,6 +31,7 @@ public class ChildC extends ParentC {
         System.out.println("ChildC :: methodOverRideRestriction");
         try {
 //            System.exit(1); // jvm exits so finally will not be called
+//            return; // finnally executes
         } finally {
             System.out.println("finally");
         }
@@ -57,7 +58,7 @@ public class ChildC extends ParentC {
         System.out.println(pc instanceof ChildC); // true
         pc.methodOverRideRestriction(9);//invokes ParentC because pc is ParentC here
         pc.methodOverRideRestriction();//invokes child because pc is ParentC reference but runtime it will resolve to ChildC
-//        (ChildC)pc.methodOverRideRestriction();
+        ((ChildC)pc).methodOverRideRestriction();//invokes child because pc is ParentC reference but runtime it will resolve to ChildC
 
         ChildC ddd = (ChildC) pc; // downcasting ; pc is ParentC
         ParentC p = new ParentC();
