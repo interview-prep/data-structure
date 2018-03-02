@@ -11,7 +11,7 @@ public class TwoDimArray {
 
         int x[][] = new int[3][3];
         int s[] = new int[3];
-        System.out.println(x.length);
+        System.out.println("matrix length : " + x.length);
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 x[i][j] = i + j + new Random().nextInt(6);
